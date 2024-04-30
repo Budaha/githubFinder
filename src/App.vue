@@ -1,26 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="wrapper">
+    <header>
+      <div class="navbar">
+        <div class="container">
+          <div class="navbar-content">
+            <div class="logo">GitHub Finder</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      links: [
+        {title: 'Home', url: '/'},
+      ]
+    }
   }
-}
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+.navbar-link {
+  &.router-link-exact-active {
+    color: #5247e7;
+  }
 }
 </style>
